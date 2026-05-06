@@ -1,14 +1,16 @@
 import express from "express";
-import { createTodo } from "../controller/todo.controller.js";
+import { createTodo,getTodos } from "../controller/todo.controller.js";
+
 
 const router = express.Router();
 
 // Create Todo
 router.post("/add", createTodo);
 
-// Test Route
-router.get("/", (req, res) => {
-  res.send("TODO API is running");
-});
+// Test Route  only for testing
+// router.get("/", (req, res) => {
+//   res.send("TODO API is running");
+// });
 
+router.get("/",getTodos)
 export default router;

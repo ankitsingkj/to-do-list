@@ -8,6 +8,7 @@
 //  depdences  ?
 //   dev dependence ?
 // module structure ?
+// valdation or error ?  and error handling ?
 //req.body ?
 // default ?: agar value na melen ye use hota hee
 // modals jo hota he db se connect hota hee
@@ -15,7 +16,7 @@
 // modal extual data create krne ke sath sath create krta he find krna find by id get put patch delet schema modal done me kr sakten he 
 // validation ke leyen use hota or scture define krta he modals
 // controller me sirf logic lekha jata hee
-// contoler me models ko export krte
+// contoler me models ko import krte
 // controller ko models todo.model.js me import krten hee
 
 //2. EXPRESS Routing + Moduler Structure
@@ -42,7 +43,39 @@
  //Validation
  //Return create Todo
  // test with Postman/tunder Clint
-
+ //6. Get All todos(API)  //yee sara ham Controller me kr sakten hee
+//   --Get /api/todos
+//   --pagination
+//   --sorting
+//   Search by tittle
+//   Test api
+// Query parmas ?
+// req.body ?
+// base query ?
+// search by tittle ?
+// sorting ?
+// option i ?
+// sortoption ?
+// pagination formula ?
+// get todo router ko controller me banayhen he usko ham router me import kengee or router me router.get ('/',gettodo)
+// search ->?search=mean
+// sort ->?sort=asc note ->asc start hone lagege phlene  (asending order)
+// sort ->?sort=desc note ->asc start hone lagege phlene  (desc order)
+// pagination->?page=1&limit=2  notes aise krte page 1 me 2 data
+// all sortin pagination ak sath ->
+// get api me pagination ,sorting ,searchig all
+// searching ke leyen regex method use hota jo spcific element ko find krta hee
+// default ?
+// query ?
+// query find ?
+// all ak sath run sort limit pagination ->http://localhost:3001/api/todos?search=a&page=1&limit=1&sort=desc
+// get singal todo by id
+// get/api/todo/:api
+// validation
+// handle wrong id
+// clean response
+// controller me mongoose import krten hee 
+// start lecture 8
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -54,7 +87,7 @@ const app = express();
 
 dotenv.config();
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || Todo;
 
 // DB connect
 connectDB();
@@ -64,7 +97,7 @@ app.use(cors());
 app.use(express.json());
 
 // routes
-app.use("/api", todoroutes);
+app.use("/api/todos", todoroutes);
 
 // server
 app.listen(PORT, () => {
